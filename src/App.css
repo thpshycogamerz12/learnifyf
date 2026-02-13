@@ -1,0 +1,6 @@
+.dark-mode * {
+  color: rgb(218, 16, 16) !important;
+}
+.light-mode * {
+  color: rgb(87, 219, 0) !important;
+}
