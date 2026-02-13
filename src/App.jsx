@@ -32,7 +32,7 @@ import LiveClasses from './pages/admin/LiveClasses'
 import Grades from './pages/admin/Grades'
 import Doubts from './pages/Doubts'
 
-export const serverUrl = "http://localhost:8000"
+export const serverUrl = "https://learnifyb.onrender.com"
 
 function App() {
   
