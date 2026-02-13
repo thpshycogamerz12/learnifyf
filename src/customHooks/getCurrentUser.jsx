@@ -1,11 +1,12 @@
 import { useEffect } from "react"
 import { serverUrl } from "../App"
 import axios from "axios"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { setUserData } from "../redux/userSlice"
+
 const getCurrentUser = ()=>{
-    let dispatch = useDispatch()
-   
+    const dispatch = useDispatch()
+
     useEffect(()=>{
         const fetchUser = async () => {
             try {
@@ -13,7 +14,10 @@ const getCurrentUser = ()=>{
                 dispatch(setUserData(result.data))
 
             } catch (error) {
-                console.log(error)
+                // Don't log error for 400 status as it's expected for non-logged in users
+                if(error.response?.status !== 400) {
+                    console.log("Error fetching user:", error)
+                }
                 dispatch(setUserData(null))
             }
         }

@@ -1,0 +1,11 @@
+services:
+  # Static Site
+  - type: web
+    name: learnify-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    routes:
+      - route: /*
+        directory: dist
+        spa: true
