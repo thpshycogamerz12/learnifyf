@@ -32,7 +32,8 @@ import LiveClasses from './pages/admin/LiveClasses'
 import Grades from './pages/admin/Grades'
 import Doubts from './pages/Doubts'
 
-export const serverUrl = "https://learnifyb.onrender.com"
+const rawServerUrl = import.meta.env.VITE_API_URL;
+export const serverUrl = (rawServerUrl && rawServerUrl.replace(/\/+$/, "")) || "http://localhost:8000";
 
 function App() {
   
